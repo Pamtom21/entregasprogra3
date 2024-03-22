@@ -1,3 +1,4 @@
+import random as ra
 # #arreglos
 # def invertir(x,y):
 #     n= len(x) - 1
@@ -51,9 +52,10 @@ def verificar(lista):
                     c=l
                     tamano= len(lista[l])
                     p=1
-    print('la palabra mas corta es: ',lista[c])
     if p == 0:
-        print("no hay")
+        print("no hay palabra corta que empieze con minusculas")
+    else:
+        print('la palabra mas corta es: ',lista[c])
 ####################################################################################
     var = ""
     varaux = "-1"
@@ -82,7 +84,46 @@ def identificar(x,lista):
         else:
             palabra+=x[f]
     verificar(lista)
+# lista=[]
+# x= input("Escribe una frase: ")
+# identificar(x,lista)
+def comunes(lista1, lista2):
+    listaux= []
+    var=""
+    for k in range(len(lista1)):
+        for l in range(len(lista2)):
+            if lista1[k] == lista2[l]:
+                listaux.append(lista1[k])
+    if len(listaux) > 3:            
+        for m in range(len(listaux)-2):
+            if listaux[m] == listaux[m+2] or listaux[m] == listaux[m+1]:
+                listaux.remove(listaux[m])
+    elif len(listaux) > 2:
+        for m in range(len(listaux)-1):
+            if listaux[m] == listaux[m+1]:
+                listaux.remove(listaux[m])  
+            
+    print(listaux)
+lista1=[]
+lista2=[]
+for l in range(4):
+    x= ra.randint(0,9)
+    lista1.append(x)
+for l in range(4):
+    x= ra.randint(0,9)
+    lista2.append(x)
+# print(lista1, lista2)
+#comunes(lista1,lista2)   
+def busquedanombre(lista,letra):
+    listaux = []
+    for k in range(len(lista)):
+            if (lista[k])[0] == letra:
+                listaux.append(lista[k])
+    print("Los nombres que corresponden a la letra: ", letra, " es ", listaux)
 lista=[]
-x= input("Escribe una frase: ")
-identificar(x,lista)
+for a in range(4):
+    x = input("ingrese nombres: ")
+    lista.append(x)
+busquedanombre(lista, input("Ingrese una letra: "))                 
+                
     
