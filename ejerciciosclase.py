@@ -121,9 +121,73 @@ def busquedanombre(lista,letra):
                 listaux.append(lista[k])
     print("Los nombres que corresponden a la letra: ", letra, " es ", listaux)
 lista=[]
-for a in range(4):
-    x = input("ingrese nombres: ")
-    lista.append(x)
-busquedanombre(lista, input("Ingrese una letra: "))                 
+# for a in range(4):
+#     x = input("ingrese nombres: ")
+#     lista.append(x)
+#busquedanombre(lista, input("Ingrese una letra: "))
+
+a=[]
+for k in range(10):
+    x = input("ingrese una palabra o un numero ")
+    a.append(x)
+origen = a
+var= ""
+for l in a:
+    var+= l + " "
+print(var)  
+listaux= []
+b=[]
+for l in range(len(a)):
+        try:
+            varin= int(a[l])
+            if varin // 2 == 0:
+                listaux.append(a[l])
+                a.remove(a[l])
+        except ValueError:
+            b.append(a[l])
+            a.remove(a[l])
+varst=""
+for m in b:
+    varst+= m + "-->"
+print(varst)
+varin= 1
+for j in range(len(a)):
+    for k in range(int(a[j])):
+        varin *= k
+    a[j] = str(varin)
+print(a)
+varsu = 0
+listaux = []
+for l in range(len(origen)):
+        try:
+            varin= int(origen[l])
+            varsu+= varin
+            listaux.append(varin)
+        except ValueError:
+            pass
+promedio = varsu / len(listaux)
+print("la suma de los numeros de origen es: ", varsu, "y su promedio es: ", promedio)
+c=[]
+for k in range(len(b)):
+    for l in range(len(b[k])):
+        c.append((b[k])[l])
+print(c)
+d=[]
+varc=""
+vara=""
+for k in c:
+    varc+=k
+for m in a:
+    vara+= m
+
+        
+        
+    
+    
+
+            
+    
+            
+                       
                 
     
