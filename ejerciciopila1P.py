@@ -38,7 +38,6 @@ p2 = pila(var)
 for l in range(var):
     f= p1.desapilar()
     p2.apilar(f)
-print(p1.imprimir())
 print(p2.imprimir())
     
 

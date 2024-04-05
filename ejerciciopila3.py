@@ -17,7 +17,7 @@ class pila:
         if self.isEmpty() == False:
             x = self.tope
             var = self.arreglo[x]
-            self.dato+=var
+            self.data+=var
             self.arreglo[x] = None
             self.tope -= 1
             return var
@@ -43,7 +43,7 @@ p1= pila()
 p2 = pila()
 p3= pila()
 for k in range(p1.MAX_ELEMENTS):
-    p1.apilar(ra.randint(0,999))
+    p1.apilar(ra.randint(0,10))
 print("Pila desordenada: ",p1.imprimir())
 while True:
     if p3.tope + 1 == p3.MAX_ELEMENTS:
