@@ -4,7 +4,7 @@ class pila:
         self.arreglo = []
         self.tope = -1
         self.MAX_ELEMENTS = 3
-        self.dato = 0
+        self.data = 0 # se agrega este atributo como una variable de control, para contener la suma de todos los enteros de la lista para ser utilizado en getTope, para que en el caso de que la pila este vacia retorne un numero mayor al mas grande ingresado
         for k in range(self.MAX_ELEMENTS):
             self.arreglo.append(None)
     def apilar(self,x):
@@ -25,7 +25,7 @@ class pila:
         if self.isEmpty() == False:
             return (self.arreglo[self.tope])
         else:
-            return self.dato
+            return self.data
     def isEmpty(self):
         if self.tope == -1:
             return True
